@@ -25,7 +25,6 @@ export default function RegisterScreen() {
                 title="Register Now"
                 onPress={onRegisterSubmit}
                 loading={loading}
-                disabled={loading}
                 rounded={false}
             />
             <MySpacer />

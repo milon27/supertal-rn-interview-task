@@ -5,4 +5,5 @@ export const NavUrl = {
     RESET_PASSWORD: "RESET_PASSWORD" as "RESET_PASSWORD",
     HOME: "HOME" as "HOME",
     DETAILS: "DETAILS" as "DETAILS",
+    FAV: "FAV" as "FAV",
 }

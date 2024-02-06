@@ -1,5 +1,7 @@
 import React from "react"
 import { Image, ScrollView, Text, View } from "react-native"
+import { useFavStore } from "../../../hooks/fav.store"
+import { RnUtils } from "../../../utils/rn.util"
 import MyButton from "../../components/common/my-button"
 import MyLoading from "../../components/common/my-loading"
 import MySpacer from "../../components/common/my-spacer"
@@ -7,6 +9,7 @@ import { useProductDetailsController } from "./product-details.controller"
 
 export default function ProductDetailsScreen() {
     const { product, error, isLoading } = useProductDetailsController()
+    const addProduct = useFavStore(s => s.addProduct)
 
     if (isLoading) {
         return (
@@ -39,7 +42,13 @@ export default function ProductDetailsScreen() {
                 <MySpacer />
                 <Text className="text-center text-lg">{product.description}</Text>
                 <MySpacer />
-                <MyButton title="Add To Favorite" onPress={() => {}} />
+                <MyButton
+                    title="Add To Favorite"
+                    onPress={() => {
+                        addProduct(product)
+                        RnUtils.toast("Added To Fav List")
+                    }}
+                />
                 <MySpacer />
             </View>
         </ScrollView>

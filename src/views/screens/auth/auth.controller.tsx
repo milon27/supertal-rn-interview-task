@@ -2,7 +2,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { GoogleSignin } from "@react-native-google-signin/google-signin"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
-import { Alert } from "react-native"
 import { EnvConfig } from "../../../config/env.config"
 import { ILoginWithEmailSchema, LoginWithEmailSchema } from "../../../services/auth/auth.schema"
 import { AuthService } from "../../../services/auth/auth.service"
@@ -58,7 +57,8 @@ export const useAuthController = () => {
             RnUtils.toast("Create Account Successfully")
         } catch (error) {
             console.error("Create with email:onSubmit:->", error)
-            Alert.alert((error as Error).message)
+            // todo: do proper error handling
+            RnUtils.toast("Email is already in use")
         } finally {
             setLoading(false)
         }
