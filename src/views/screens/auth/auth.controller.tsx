@@ -1,12 +1,18 @@
 import { zodResolver } from "@hookform/resolvers/zod"
+import { GoogleSignin } from "@react-native-google-signin/google-signin"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { Alert } from "react-native"
+import { EnvConfig } from "../../../config/env.config"
 import { ILoginWithEmailSchema, LoginWithEmailSchema } from "../../../services/auth/auth.schema"
 import { AuthService } from "../../../services/auth/auth.service"
 import { RnUtils } from "../../../utils/rn.util"
 
 export const useAuthController = () => {
+    GoogleSignin.configure({
+        webClientId: EnvConfig.GOOGLE_WEB_CLIENT_ID,
+    })
+
     const [loading, setLoading] = useState(false)
     const [loadingGoogle, setLoadingGoogle] = useState(false)
 
@@ -31,6 +37,19 @@ export const useAuthController = () => {
             setLoading(false)
         }
     }
+    const onLoginGoogle = async () => {
+        try {
+            setLoadingGoogle(true)
+            await AuthService.loginWithGoogle()
+            RnUtils.toast("Login SuccessFull")
+        } catch (error) {
+            console.error(error)
+            // Alert.alert((error as Error).message)
+            RnUtils.toast("Something went wrong")
+        } finally {
+            setLoadingGoogle(false)
+        }
+    }
 
     const onRegisterSubmit = async (data: ILoginWithEmailSchema) => {
         try {
@@ -49,6 +68,7 @@ export const useAuthController = () => {
         loading,
         loadingGoogle,
         control,
+        onLoginGoogle,
         onSubmit: handleSubmit(onSubmit),
         onRegisterSubmit: handleSubmit(onRegisterSubmit),
     }

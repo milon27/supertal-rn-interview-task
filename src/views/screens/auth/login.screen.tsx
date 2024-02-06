@@ -9,8 +9,9 @@ import { TypeAuthNavigationProp } from "../../components/navigator/auth.navigato
 import { useAuthController } from "./auth.controller"
 
 export default function LoginScreen() {
-    const { control, loading, loadingGoogle, onSubmit } = useAuthController()
+    const { control, loading, loadingGoogle, onSubmit, onLoginGoogle } = useAuthController()
     const { navigate } = useNavigation<TypeAuthNavigationProp>()
+
     return (
         <View className="p-4 flex-1 justify-center">
             <Text className="text-lg">Welcome to</Text>
@@ -24,7 +25,13 @@ export default function LoginScreen() {
             <MySpacer />
             <Text className="text-lg text-center text-gray-400">or</Text>
             <MySpacer />
-            <MyButton variant="outline" title="Login With Google" onPress={onSubmit} rounded={false} />
+            <MyButton
+                variant="outline"
+                title="Login With Google"
+                loading={loadingGoogle}
+                onPress={onLoginGoogle}
+                rounded={false}
+            />
             <MySpacer />
             <MySpacer />
             <MyButton
