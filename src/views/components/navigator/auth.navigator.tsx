@@ -3,6 +3,7 @@ import { createNativeStackNavigator, NativeStackNavigationProp } from "@react-na
 import React from "react"
 import { NavUrl } from "../../../constants/nav-url.constant"
 import LoginScreen from "../../screens/auth/login.screen"
+import RegisterScreen from "../../screens/auth/register.screen"
 
 // maybe-todo: define other navigator type, write doc in notion for login with google and auth nav type
 type TypeAuthNavigatorParamsList = {
@@ -22,7 +23,7 @@ export default function AuthNavigator() {
     return (
         <AuthStackNav.Navigator screenOptions={{ headerShown: false, animation: "fade_from_bottom" }}>
             <AuthStackNav.Screen name={NavUrl.LOGIN} component={LoginScreen} />
-            {/* <AuthStackNav.Screen name={NavUrl.REGISTER} component={RegisterScreen} /> */}
+            <AuthStackNav.Screen name={NavUrl.REGISTER} component={RegisterScreen} />
             {/* <AuthStackNav.Screen name={NavUrl.FORGET_PASSWORD} component={ForgetPasswordScreen} /> */}
             {/* <AuthStackNav.Screen name={NavUrl.RESET_PASSWORD} component={ResetPasswordScreen} /> */}
         </AuthStackNav.Navigator>

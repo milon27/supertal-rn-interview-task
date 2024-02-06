@@ -12,7 +12,20 @@
           "package_name": "com.fakestoreapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "51803939615-hocesleggjormq46too289oj01l661p4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fakestoreapp",
+            "certificate_hash": "870f682d6f5141d64027f527d62c13ed6f5f73b9"
+          }
+        },
+        {
+          "client_id": "51803939615-jmaqicsjld355l2o9fmhdi6q344makof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAslszl1p2V-VTKvmMBcS09c33b9-yRfjQ"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51803939615-jmaqicsjld355l2o9fmhdi6q344makof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
