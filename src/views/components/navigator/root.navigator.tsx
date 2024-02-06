@@ -1,6 +1,7 @@
-import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth"
+import auth from "@react-native-firebase/auth"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import React, { useEffect, useState } from "react"
+import { useUserStore } from "../../../hooks/user.store"
 import MyLoading from "../common/my-loading"
 import AuthNavigator from "./auth.navigator"
 import HomeNavigator from "./home.navigator"
@@ -9,13 +10,12 @@ const RootStack = createNativeStackNavigator()
 
 export default function RootNavigator() {
     const [initializing, setInitializing] = useState(true)
-    const [user, setUser] = useState<FirebaseAuthTypes.User | null>()
-
+    const { setCurrentUser, user } = useUserStore()
     // Handle user state changes
 
     useEffect(() => {
         const subscriber = auth().onAuthStateChanged(user => {
-            setUser(user)
+            if (user) setCurrentUser(user)
             if (initializing) setInitializing(false)
         })
         return subscriber // unsubscribe on unmount
