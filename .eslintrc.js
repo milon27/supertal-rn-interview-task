@@ -1,4 +1,26 @@
 module.exports = {
-  root: true,
-  extends: '@react-native',
-};
+    root: true,
+    extends: "@react-native",
+    rules: {
+        "@typescript-eslint/no-unused-expressions": "error",
+        "no-console": "warn",
+        "linebreak-style": "off",
+        "no-nested-ternary": "off",
+        radix: "off",
+        "no-underscore-dangle": "off",
+        "import/prefer-default-export": "off",
+        "class-methods-use-this": "off",
+        "@typescript-eslint/dot-notation": "off",
+        "require-await": ["error"],
+        "@typescript-eslint/no-floating-promises": ["error"],
+        "no-await-in-loop": ["off"],
+        // react native only
+        quotes: "off",
+        semi: "off",
+        "comma-dangle": "off",
+        "react/no-unstable-nested-components": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "react-native/no-inline-styles": "off",
+        "import/no-extraneous-dependencies": ["warn"],
+    },
+}
