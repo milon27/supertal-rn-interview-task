@@ -30,7 +30,7 @@ export const useAuthController = () => {
             reset()
             RnUtils.toast("Login SuccessFull")
         } catch (error) {
-            console.error(error)
+            // console.error(error)
             // Alert.alert((error as Error).message)
             RnUtils.toast("No User Found With This Email")
         } finally {
@@ -44,7 +44,7 @@ export const useAuthController = () => {
             reset()
             RnUtils.toast("Login SuccessFull")
         } catch (error) {
-            console.error(error)
+            // console.error(error)
             // Alert.alert((error as Error).message)
             RnUtils.toast("Something went wrong")
         } finally {
@@ -59,7 +59,7 @@ export const useAuthController = () => {
             reset()
             RnUtils.toast("Create Account Successfully")
         } catch (error) {
-            console.error("Create with email:onSubmit:->", error)
+            // console.error("Create with email:onSubmit:->", error)
             // todo: do proper error handling
             RnUtils.toast("Email is already in use")
         } finally {

@@ -14,14 +14,20 @@ export default function RootNavigator() {
     // Handle user state changes
 
     useEffect(() => {
-        const subscriber = auth().onAuthStateChanged(user => {
-            if (user) setCurrentUser(user)
-            if (initializing) setInitializing(false)
+        const subscriber = auth().onAuthStateChanged(userData => {
+            if (userData) {
+                setCurrentUser(userData)
+            }
+            if (initializing) {
+                setInitializing(false)
+            }
         })
         return subscriber // unsubscribe on unmount
     }, [])
 
-    if (initializing) return <MyLoading />
+    if (initializing) {
+        return <MyLoading />
+    }
 
     return (
         <>

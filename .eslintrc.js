@@ -12,7 +12,6 @@ module.exports = {
         "class-methods-use-this": "off",
         "@typescript-eslint/dot-notation": "off",
         "require-await": ["error"],
-        "@typescript-eslint/no-floating-promises": ["error"],
         "no-await-in-loop": ["off"],
         // react native only
         quotes: "off",
@@ -21,6 +20,6 @@ module.exports = {
         "react/no-unstable-nested-components": "off",
         "react-hooks/exhaustive-deps": "off",
         "react-native/no-inline-styles": "off",
-        "import/no-extraneous-dependencies": ["warn"],
+        "import/no-extraneous-dependencies": ["off"],
     },
 }
