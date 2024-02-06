@@ -38,7 +38,9 @@ export default function ProductDetailsScreen() {
                 <MySpacer />
                 <Text className="text-primary font-semibold text-xl text-center">{product.title}</Text>
                 <MySpacer />
-                <Text className="text-center text-lg">Price: {product.price} $</Text>
+                <Text className="text-center text-lg">Category: {product.category}</Text>
+                <MySpacer />
+                <Text className="text-center text-lg font-bold">Price: {product.price} $</Text>
                 <MySpacer />
                 <Text className="text-center text-lg">{product.description}</Text>
                 <MySpacer />

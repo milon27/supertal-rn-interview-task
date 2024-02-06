@@ -18,8 +18,8 @@ export const useAuthController = () => {
     const { control, handleSubmit, reset } = useForm<ILoginWithEmailSchema>({
         resolver: zodResolver(LoginWithEmailSchema),
         defaultValues: {
-            email: "aba@g.com",
-            password: "1234567",
+            email: "",
+            password: "",
         },
     })
 
@@ -27,6 +27,7 @@ export const useAuthController = () => {
         try {
             setLoading(true)
             await AuthService.loginWithEmail(data)
+            reset()
             RnUtils.toast("Login SuccessFull")
         } catch (error) {
             console.error(error)
@@ -40,6 +41,7 @@ export const useAuthController = () => {
         try {
             setLoadingGoogle(true)
             await AuthService.loginWithGoogle()
+            reset()
             RnUtils.toast("Login SuccessFull")
         } catch (error) {
             console.error(error)
@@ -54,6 +56,7 @@ export const useAuthController = () => {
         try {
             setLoading(true)
             await AuthService.createWithEmail(data)
+            reset()
             RnUtils.toast("Create Account Successfully")
         } catch (error) {
             console.error("Create with email:onSubmit:->", error)

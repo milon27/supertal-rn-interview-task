@@ -27,7 +27,7 @@ export default function LoginScreen() {
             <MySpacer />
             <MyButton
                 variant="outline"
-                title="Login With Google"
+                title="Continue With Google"
                 loading={loadingGoogle}
                 onPress={onLoginGoogle}
                 rounded={false}

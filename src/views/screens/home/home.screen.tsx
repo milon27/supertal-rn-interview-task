@@ -36,8 +36,9 @@ export default function HomeScreen() {
             <View className="flex-1 p-2">
                 <View className="p-2 flex-row gap-2 justify-between items-end">
                     <View>
-                        <Text className="text-lg">Welcome </Text>
-                        <Text className="text-2xl text-primary font-bold">{user?.displayName || user?.email}</Text>
+                        <Text className="text-2xl text-primary font-bold">
+                            Welcome, {user?.displayName || user?.email?.split("@")[0]}
+                        </Text>
                     </View>
                     <TouchableOpacity
                         onPress={() => {
