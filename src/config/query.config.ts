@@ -24,5 +24,5 @@ export const queryClient = new QueryClient({
 })
 
 export const QUERY_KEYS = {
-    ALL_CHATS: "qk-all-chats",
+    ALL_PRODUCTS: "qk-all-products",
 }
