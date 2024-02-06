@@ -34,17 +34,23 @@ export default function HomeScreen() {
     return (
         <ScrollView>
             <View className="flex-1 p-2">
-                <View className="p-2 flex-row gap-2 justify-between items-end">
+                <View className="px-2 flex-row gap-2 justify-between items-end">
                     <View>
-                        <Text className="text-2xl text-primary font-bold">
+                        <Text className="text-2xl text-primary">
                             Welcome, {user?.displayName || user?.email?.split("@")[0]}
                         </Text>
+                    </View>
+                </View>
+                <MySpacer />
+                <View className="px-2 flex-row gap-2 justify-between items-end">
+                    <View>
+                        <Text className="text-xl font-semibold">All Products</Text>
                     </View>
                     <TouchableOpacity
                         onPress={() => {
                             navigate(NavUrl.FAV)
                         }}>
-                        <Text className="text-lg text-red-400 font-bold">♥ Products</Text>
+                        <Text className="text-lg text-red-400 font-semibold">♥ Products</Text>
                     </TouchableOpacity>
                 </View>
                 <MySpacer />
