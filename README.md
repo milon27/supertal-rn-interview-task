@@ -5,13 +5,14 @@
 ## How to run
 
     ```bash
-    git clone repo-url
+    git clone https://github.com/milon27/supertal-rn-interview-task.git
     yarn
     yarn start
     ```
 
 > APK FILE
-> [You can download the APK here](https://www.example.com/your-apk-file.apk).
+
+## [You can download the APK here](https://github.com/milon27/supertal-rn-interview-task/raw/master/tmdb.apk)
 
 > features with screenshot
 
