@@ -3,7 +3,7 @@ import React from "react"
 import { FlatList, Text, View } from "react-native"
 import MyLoading from "../../components/common/my-loading"
 import { TypeRootNavigationProp } from "../../components/navigator/root.navigator"
-import SingleMovie from "./components/single-movie"
+import { SingleMovieMemo } from "./components/single-movie"
 import { useHomeController } from "./home.controller"
 
 export default function PopularScreen() {
@@ -31,7 +31,9 @@ export default function PopularScreen() {
                 data={popular}
                 keyExtractor={it => it.id.toString()}
                 numColumns={2}
-                renderItem={({ item }) => SingleMovie({ item, navigate })}
+                renderItem={({ item }) => {
+                    return <SingleMovieMemo item={item} navigate={navigate} />
+                }}
             />
         </>
     )

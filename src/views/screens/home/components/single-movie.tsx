@@ -43,3 +43,5 @@ export default function SingleMovie({
         </TouchableOpacity>
     )
 }
+
+export const SingleMovieMemo = React.memo(SingleMovie)
