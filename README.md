@@ -18,15 +18,15 @@
 
 -   # Latest Movie List
 
-    ![image](screenshot/latest.png)
+    <img src="screenshot/latest.png" alt="image" width="350"/>
 
 -   # Popular Movie List
 
-    ![image](screenshot/popular.png)
+    <img src="screenshot/popular.png" alt="image" width="350"/>
 
 -   # Movie Detail Page
 
-    ![image](screenshot/details.png)
+    <img src="screenshot/details.png" alt="image" width="350"/>
 
 -   # Unite Test
 
