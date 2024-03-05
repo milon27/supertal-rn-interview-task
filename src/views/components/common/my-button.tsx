@@ -7,7 +7,7 @@ type IVariantStyle = "primary" | "fill" | "fillLight" | "outline" | "accent"
 
 const variantBtnBgStyles = {
     primary: "bg-primary",
-    accent: "bg-[#0084ff]",
+    accent: "bg-secondary",
     fill: "bg-gray-300 dark:bg-gray-600",
     // inputFill: "bg-[#dedede] dark:bg-[#212121]",
     fillLight: "bg-gray-200 dark:bg-gray-700",

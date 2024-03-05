@@ -1,4 +1,4 @@
-# Product Listing with Firebase Auth
+# TMDB Movie List App with React Native
 
 > Developer Guide
 

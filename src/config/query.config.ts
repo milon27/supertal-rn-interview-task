@@ -9,18 +9,6 @@ export const queryClient = new QueryClient({
             retry: 2,
         },
     },
-    // logger: {
-    //     log: () => {
-    //         // Log debugging information
-    //     },
-    //     warn: () => {
-    //         // Log warning
-    //     },
-    //     error: () => {
-    //         // console.info("some error in react query")
-    //         // Log error
-    //     },
-    // },
 })
 
 export const QUERY_KEYS = {

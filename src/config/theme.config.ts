@@ -1,6 +1,7 @@
 export const TailwindTheme = {
     colors: {
-        primary: "#16a34a",
+        primary: "#032541",
+        secondary: "#01b4e4",
         gray: {
             50: "#f9fafb",
             100: "#f3f4f6",
