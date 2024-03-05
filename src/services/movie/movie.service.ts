@@ -10,7 +10,7 @@ export const MovieService = {
         const result = await ApiService.get<IPopularMovieResponse>(`/movie/popular?language=en-US&page=2`)
         return result.data
     },
-    getSingleProduct: async (id: number) => {
+    getSingle: async (id: number) => {
         const result = await ApiService.get<MovieDetails>(`/movie/${id}?language=en-US`)
         return result.data
     },

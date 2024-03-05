@@ -13,12 +13,12 @@ export const useDetailsController = () => {
             if (!params?.id) {
                 throw new Error("Not Found")
             }
-            return MovieService.getSingleProduct(params?.id)
+            return MovieService.getSingle(params?.id)
         },
     })
 
     return {
-        product: data,
+        movie: data,
         isLoading,
         error,
     }
