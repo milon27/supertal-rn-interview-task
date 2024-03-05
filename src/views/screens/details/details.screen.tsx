@@ -36,9 +36,9 @@ export default function DetailsScreen() {
                 source={{
                     uri: EnvConfig.IMAGE_PREFIX + item.backdrop_path,
                 }}>
-                <View className="pt-8 pb-4 m-4 flex-row space-x-2">
+                <View className="pt-8 pb-4 m-4 flex-row space-x-4">
                     <Image
-                        className="w-36 rounded-md"
+                        className="w-36 min-h-[245px] rounded-md"
                         source={{
                             uri: EnvConfig.IMAGE_PREFIX + item.poster_path,
                         }}
