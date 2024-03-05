@@ -8,7 +8,6 @@ import { NavUrl } from "../../../constants/nav-url.constant"
 import HomeScreen from "../../screens/home/latest.screen"
 import PopularScreen from "../../screens/home/popular.screen"
 
-// maybe-todo: define other navigator type, write doc in notion for login with google and auth nav type
 type TypeHomeNavigatorParamsList = {
     [NavUrl.LATEST]: undefined
     [NavUrl.POPULAR]: undefined

@@ -89,7 +89,7 @@ export default function DetailsScreen() {
                     <MySpacer />
                 </View>
                 <MyButton
-                    title="View Details"
+                    title="View More Details"
                     rounded={false}
                     onPress={async () => {
                         await RnUtils.openLink(item.homepage)
