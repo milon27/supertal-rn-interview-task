@@ -1,18 +1,38 @@
 import { useQuery } from "@tanstack/react-query"
 import { QUERY_KEYS } from "../../../config/query.config"
-import { ProductService } from "../../../services/product/product.service"
+import { MovieService } from "../../../services/movie/movie.service"
 
 export const useHomeController = () => {
-    const { data, isLoading, error } = useQuery({
-        queryKey: [QUERY_KEYS.ALL_PRODUCTS],
+    // latest
+    const {
+        data: latest,
+        isLoading: latestLoading,
+        error: latestError,
+    } = useQuery({
+        queryKey: [QUERY_KEYS.LATEST_MOVIE],
         queryFn: () => {
-            return ProductService.getAllProduct()
+            return MovieService.getLatest()
+        },
+    })
+
+    // popular
+    const {
+        data: popular,
+        isLoading: popularLoading,
+        error: popularError,
+    } = useQuery({
+        queryKey: [QUERY_KEYS.POPULAR_MOVIE],
+        queryFn: () => {
+            return MovieService.getPopular()
         },
     })
 
     return {
-        products: data,
-        isLoading,
-        error,
+        latest: latest?.results || [],
+        latestLoading,
+        latestError,
+        popular: popular?.results || [],
+        popularLoading,
+        popularError,
     }
 }

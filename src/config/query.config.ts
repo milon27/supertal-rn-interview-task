@@ -12,5 +12,7 @@ export const queryClient = new QueryClient({
 })
 
 export const QUERY_KEYS = {
-    ALL_PRODUCTS: "qk-all-products",
+    LATEST_MOVIE: "qk-latest-movie",
+    POPULAR_MOVIE: "qk-popular-movie",
+    SINGLE_MOVIE: "qk-single-movie-",
 }

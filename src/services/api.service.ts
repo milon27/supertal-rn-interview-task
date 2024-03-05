@@ -9,5 +9,7 @@ export const ApiService = axios.create({
     timeoutErrorMessage: MessageConstant.SLOW_INTERNET,
     headers: {
         "Access-Control-Allow-Credentials": true,
+        accept: "application/json",
+        Authorization: `Bearer ${EnvConfig.API_READ_AT}`,
     },
 })
