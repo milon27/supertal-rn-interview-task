@@ -28,6 +28,6 @@
 
     <img src="screenshot/details.png" alt="image" width="350"/>
 
--   # Unite Test
+-   # Unit Test
 
     ![image](screenshot/test.png)
