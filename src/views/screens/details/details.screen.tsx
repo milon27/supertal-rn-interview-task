@@ -1,15 +1,16 @@
 import React from "react"
-import { Image, ImageBackground, ScrollView, StatusBar, Text, View } from "react-native"
+import { FlatList, Image, ImageBackground, ScrollView, StatusBar, Text, View } from "react-native"
 import { EnvConfig } from "../../../config/env.config"
 import { DateUtil } from "../../../utils/date.util"
 import { RnUtils } from "../../../utils/rn.util"
+import MyInputWithRHF from "../../components/common/form/my-input"
 import MyButton from "../../components/common/my-button"
 import MyLoading from "../../components/common/my-loading"
 import MySpacer from "../../components/common/my-spacer"
 import { useDetailsController } from "./details.controller"
 
 export default function DetailsScreen() {
-    const { movie: item, error, isLoading } = useDetailsController()
+    const { movie: item, error, isLoading, control, handleSubmit, comments } = useDetailsController()
 
     if (isLoading) {
         return (
@@ -93,6 +94,36 @@ export default function DetailsScreen() {
                     rounded={false}
                     onPress={async () => {
                         await RnUtils.openLink(item.homepage)
+                    }}
+                />
+                <MySpacer />
+                <MySpacer />
+                {/* input box */}
+                <MyInputWithRHF control={control} name="text" label="Comment" />
+                <MySpacer />
+                <MyButton
+                    title="Submit Comment"
+                    variant="accent"
+                    rounded={false}
+                    onPress={async () => {
+                        await handleSubmit()
+                    }}
+                />
+                {/* list of comments */}
+                <FlatList
+                    scrollEnabled={false}
+                    data={comments}
+                    keyExtractor={it => it.id.toString()}
+                    numColumns={1}
+                    renderItem={({ item: comItem }) => {
+                        return (
+                            <View
+                                className="bg-gray-200 p-3 rounded-md my-2 flex-row justify-between"
+                                key={comItem.id}>
+                                <Text className="text-xl">{comItem.text}</Text>
+                                <Text>{DateUtil.format(comItem.createdAt)}</Text>
+                            </View>
+                        )
                     }}
                 />
             </View>

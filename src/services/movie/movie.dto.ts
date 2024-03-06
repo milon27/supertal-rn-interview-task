@@ -1,5 +1,13 @@
 // * Request Object
 
+export interface ICreateComment {
+    id: string
+    movieId: number
+    text: string
+    userId: string
+    createdAt: string
+}
+
 // * Response
 export interface IMovie {
     id: number
