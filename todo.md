@@ -10,3 +10,9 @@ Mobile : TMDb React App using RN
 -   And For Details Page Designs Reference - https://www.themoviedb.org/movie/181812-star-wars-the-rise-of-skywalker?language=en-US
 -   Share the git repo. Let me know if you have any questions.
 -   Write unit test cases at least 2.
+
+<!-- comment feature on single movie screen -->
+
+-   input box+ submit button
+-   list of comments in desc order of time
+-   local storage
